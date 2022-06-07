@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Lesson10;
 
 public enum POSITION {
     DIRECTOR(1.5),
