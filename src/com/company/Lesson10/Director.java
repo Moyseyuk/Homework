@@ -3,14 +3,13 @@ package com.company.Lesson10;
 import java.util.Arrays;
 
 public class Director extends Employee {
-
-    POSITION position;
-    Employee[] childs;
+    
+    Employee[] employees;
 
     public Director(String name, String surname, double seniority) {
         super(name, surname, seniority);
-        position = POSITION.DIRECTOR;
-        childs = new Employee[20];
+        super.position = POSITION.DIRECTOR;
+        employees = new Employee[20];
     }
 
     @Override
@@ -18,10 +17,10 @@ public class Director extends Employee {
         return (20 * POSITION.DIRECTOR.getKoef() * this.seniority) + (checkChilds() * 5);
     }
 
-    public void setChilds(Employee child) {
-        for (int count = 0; count < this.childs.length; count++) {
-            if (this.childs[count] == null) {
-                this.childs[count] = child;
+    public void addEmployees(Employee child) {
+        for (int count = 0; count < this.employees.length; count++) {
+            if (this.employees[count] == null) {
+                this.employees[count] = child;
                 break;
             }
         }
@@ -29,7 +28,7 @@ public class Director extends Employee {
 
     private int checkChilds() {
         int count = 0;
-        for (Employee child : this.childs) {
+        for (Employee child : this.employees) {
             if (child != null) {
                 count++;
             }
@@ -37,10 +36,10 @@ public class Director extends Employee {
         return count;
     }
 
-    private Employee[] childsToString(int count) {
+    private Employee[] emploeesToMass(int count) {
         Employee[] child = new Employee[count];
         for (int i = 0; i < count; i++) {
-            child[i] = this.childs[i];
+            child[i] = this.employees[i];
         }
         return child;
     }
@@ -53,6 +52,6 @@ public class Director extends Employee {
                 ", Стаж = " + seniority +
                 ", Должность = " + position +
                 ", Зарплата = " + this.wage() +
-                "\n     Подчинённые:" + Arrays.toString(childsToString(checkChilds()));
+                "\n     Подчинённые:" + Arrays.toString(emploeesToMass(checkChilds()));
     }
 }

@@ -14,14 +14,14 @@ public class Main {
         System.out.println(worker3.getName() + " " + worker3.getSurname() + ", Зарплата:" + worker3.wage());
         System.out.println(director1.getName() + " " + director1.getSurname() + ", Зарплата:" + director1.wage());
 
-        director1.setChilds(worker1);
-        director1.setChilds(worker2);
+        director1.addEmployees(worker1);
+        director1.addEmployees(worker2);
 
         System.out.println(director1);
 
         Director director2 = new Director("Андрей", "Цымбал", 5);
-        director2.setChilds(worker3);
-        director1.setChilds(director2);
+        director2.addEmployees(worker3);
+        director1.addEmployees(director2);
         System.out.println(director1);
 
         Search.search(director1, "Миша");

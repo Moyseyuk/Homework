@@ -5,12 +5,12 @@ public abstract class Search {
     private static int count = 0;
 
     public static void find(Director director, String name) {
-        for (int i = 0; i < director.childs.length; i++) {
-            if (director.childs[i] != null) {
-                if (director.childs[i] instanceof Director) {
-                    find(((Director) director.childs[i]), name);
+        for (int i = 0; i < director.employees.length; i++) {
+            if (director.employees[i] != null) {
+                if (director.employees[i] instanceof Director) {
+                    find(((Director) director.employees[i]), name);
                 } else {
-                    if (director.childs[i].name.equals(name)) {
+                    if (director.employees[i].name.equals(name)) {
                         count++;
                     }
                 }

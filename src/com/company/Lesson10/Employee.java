@@ -4,11 +4,19 @@ public abstract class Employee {
     protected String name;
     protected String surname;
     protected double seniority;
+    protected POSITION position;
 
     public Employee(String name, String surname, double seniority) {
         this.name = name;
         this.surname = surname;
         this.seniority = seniority;
+    }
+
+    public Employee(String name, String surname, double seniority, POSITION position) {
+        this.name = name;
+        this.surname = surname;
+        this.seniority = seniority;
+        this.position = position;
     }
 
     public String getName() {

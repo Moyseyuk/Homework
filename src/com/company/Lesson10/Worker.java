@@ -2,8 +2,6 @@ package com.company.Lesson10;
 
 public class Worker extends Employee {
 
-    POSITION position;
-
     public Worker(String name, String surname, double seniority) {
         super(name, surname, seniority);
         position = POSITION.WORKER;
