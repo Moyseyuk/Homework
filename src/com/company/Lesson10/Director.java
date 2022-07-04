@@ -3,7 +3,7 @@ package com.company.Lesson10;
 import java.util.Arrays;
 
 public class Director extends Employee {
-    
+
     Employee[] employees;
 
     public Director(String name, String surname, double seniority) {
